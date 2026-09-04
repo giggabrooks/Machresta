@@ -101,13 +101,19 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
 
 /* ═══ TEAM ═══ */
 .abt-team{padding:120px 0;border-top:1px solid var(--line)}
-.abt-team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
+.abt-team-headline{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:60px}
+.abt-team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
 .abt-member{text-align:center}
-.abt-member-img{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line);margin-bottom:20px;transition:transform .4s cubic-bezier(.22,1,.36,1);position:relative}
-.abt-member-img:hover{transform:scale(1.05)}
-.abt-member-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.2) contrast(1.05)}
-.abt-member h3{font-size:18px;margin-bottom:4px}
+.abt-member-img{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid rgba(198,161,91,.15);margin-bottom:20px;transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .4s;position:relative;background:#1a1a18}
+.abt-member-img:hover{transform:scale(1.05);border-color:rgba(198,161,91,.4);box-shadow:0 8px 40px rgba(198,161,91,.1)}
+.abt-member-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.1) contrast(1.05);transition:filter .4s}
+.abt-member-img:hover img{filter:grayscale(0) contrast(1.1)}
+.abt-member h3{font-size:18px;margin-bottom:4px;font-family:var(--serif);font-weight:600}
 .abt-member span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.abt-member.headline .abt-member-img{max-width:260px;margin-left:auto;margin-right:auto;border-width:2px}
+.abt-member.headline h3{font-size:24px}
+.abt-member.headline span{font-size:11px;letter-spacing:2.5px}
+.abt-team-divider{height:1px;background:var(--line);margin:48px 0 0;opacity:.5}
 
 /* ═══ NUMBERS ═══ */
 .abt-numbers{padding:120px 0;background:linear-gradient(180deg,var(--ink) 0%,var(--black) 100%);border-top:1px solid var(--line)}
@@ -166,6 +172,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
 .abt-story-img{transform:none}.abt-story-img:hover{transform:none}
 .abt-values-grid{grid-template-columns:1fr}
 .abt-team-grid{grid-template-columns:1fr 1fr}
+.abt-team-headline{gap:28px}.abt-team-row{grid-template-columns:1fr 1fr}
 .abt-numbers-grid{grid-template-columns:1fr 1fr}
 .nav-overlay{padding:80px 32px 50px}.nav-overlay .nav-link{font-size:clamp(26px,8vw,44px)}.nav-overlay .nav-footer{left:32px;flex-wrap:wrap;gap:16px}
 .top-bar{padding:16px 24px}
@@ -247,26 +254,34 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
     <div class="eyebrow" style="display:inline-block">The team</div>
     <h2 style="margin-top:16px">Small team.<br><span class="gold">Big impact.</span></h2>
   </div>
-  <div class="abt-team-grid" data-stagger data-reveal="up">
+  <div class="abt-team-headline" data-stagger data-reveal="up">
+    <div class="abt-member headline float3d">
+      <div class="abt-member-img"><img src="assets/absi%20CEO.jpeg" alt="Absi" loading="lazy"></div>
+      <h3>Absi</h3>
+      <span>Chief Executive Officer</span>
+    </div>
+    <div class="abt-member headline float3d">
+      <div class="abt-member-img"><img src="assets/sufi%20MD%20(1).jpeg" alt="Sufi" loading="lazy"></div>
+      <h3>Sufi</h3>
+      <span>Managing Director</span>
+    </div>
+  </div>
+  <div class="abt-team-divider"></div>
+  <div class="abt-team-row" data-stagger data-reveal="up">
     <div class="abt-member float3d">
-      <div class="abt-member-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Founder" loading="lazy"></div>
-      <h3>Founder</h3>
-      <span>Strategy &amp; Vision</span>
+      <div class="abt-member-img"><img src="assets/Usman%20.JPG" alt="Usman" loading="lazy"></div>
+      <h3>Usman</h3>
+      <span>General Member</span>
     </div>
     <div class="abt-member float3d">
-      <div class="abt-member-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" alt="Design Lead" loading="lazy"></div>
-      <h3>Design Lead</h3>
-      <span>Brand &amp; UI</span>
+      <div class="abt-member-img"><img src="assets/Saad.JPG" alt="Saad" loading="lazy"></div>
+      <h3>Saad</h3>
+      <span>Dev Team</span>
     </div>
     <div class="abt-member float3d">
-      <div class="abt-member-img"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop" alt="Dev Lead" loading="lazy"></div>
-      <h3>Dev Lead</h3>
-      <span>Engineering</span>
-    </div>
-    <div class="abt-member float3d">
-      <div class="abt-member-img"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop" alt="Marketing Lead" loading="lazy"></div>
-      <h3>Marketing Lead</h3>
-      <span>Growth &amp; SEO</span>
+      <div class="abt-member-img"><img src="assets/yasir.jpg" alt="Yasir" loading="lazy"></div>
+      <h3>Yasir</h3>
+      <span>Dev Team</span>
     </div>
   </div>
 </div></section>
