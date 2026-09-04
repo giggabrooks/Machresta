@@ -416,18 +416,26 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu();
 /* Smooth scroll */
 window.goSmooth=function(s){var el=document.querySelector(s);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});};
 
-/* Loading */
-document.body.classList.add("loading");
-setTimeout(function(){
-  document.getElementById("loader").classList.add("done");
+/* Loading — first visit only */
+if(!sessionStorage.getItem("macresta_loaded")){
+  sessionStorage.setItem("macresta_loaded","1");
+  document.body.classList.add("loading");
+  setTimeout(function(){
+    document.getElementById("loader").classList.add("done");
+    document.documentElement.classList.add("smooth");
+    document.body.classList.remove("loading");
+    setTimeout(function(){document.getElementById("loader").style.display="none";},2300);
+    setTimeout(function(){document.querySelector(".hero").classList.add("revealed");},500);
+    setTimeout(function(){document.getElementById("topbar").classList.add("visible");},1800);
+    setTimeout(function(){document.getElementById("dotNav").classList.add("visible");},2200);
+  },3200);
+} else {
+  document.getElementById("loader").style.display="none";
+  document.querySelector(".hero").classList.add("revealed");
+  document.getElementById("topbar").classList.add("visible");
+  document.getElementById("dotNav").classList.add("visible");
   document.documentElement.classList.add("smooth");
-  document.body.classList.remove("loading");
-  setTimeout(function(){document.getElementById("loader").style.display="none";},2300);
-  /* Cinematic cross-fade: loader blurs out while hero materializes */
-  setTimeout(function(){document.querySelector(".hero").classList.add("revealed");},500);
-  setTimeout(function(){document.getElementById("topbar").classList.add("visible");},1800);
-  setTimeout(function(){document.getElementById("dotNav").classList.add("visible");},2200);
-},3200);
+}
 
 /* Hero parallax */
 window.addEventListener("scroll",function(){
