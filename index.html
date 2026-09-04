@@ -246,6 +246,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:800px){
+html,body{overflow-x:hidden}
 .shell{width:min(100% - 32px,600px)}
 .about-grid{grid-template-columns:1fr}
 .work-grid{grid-template-columns:1fr}
@@ -257,7 +258,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
 .about-img{transform:none}.about-img:hover{transform:none}
 .nav-overlay{padding:80px 32px 50px}.nav-overlay .nav-link{font-size:clamp(26px,8vw,44px)}.nav-overlay .nav-footer{left:32px;flex-wrap:wrap;gap:16px}
 .top-bar{padding:16px 24px}
-.dot-nav{right:12px;gap:12px}.dot-nav a{width:6px;height:6px}.dot-nav a::after{display:none}
+.dot-nav{right:12px;gap:12px;overflow:visible}.dot-nav a{width:6px;height:6px}.dot-nav a::after{display:none}
 }
 </style>
 </head>
